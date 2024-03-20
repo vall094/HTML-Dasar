@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <head>
+        <title>Combinator Selector</title>
+    </head>
+    <style>
+        div p { /* no 1 */
+            color: red;
+        }
+        div > p { /* no 2*/
+            background-color: yellow;
+        }
+        div + p { /*no 3 */
+            background-color: darkgray;
+        }
+        div ~ p { /* no 4*/
+            color: cyan;
+        }
+    </style>
+    <body>
+        <body>
+            <div>
+                <p>This is a paragraph, rule akan diterapkan pada seluruh elemen yang menjadi 
+                    turunannya walaupun secara tidak langsung. 
+                </p>
+                <p>This is a paragraph, Child Selector menggabungkan dua buah basic selector dengan 
+                    menggunakan tanda greater than (>). elemen paragraf merupakan child dari elemen 
+                    div, bukan hanya sebuah turunannya.
+                </p>
+            </div>
+            <p>This is a paragraph, Adjacent Sibling Selector terdiri dari dua buah target elemen, 
+                tetapi hanya elemen kedua yang menerapkan rule selama elemen tersebut dituliskan 
+                langsung setelah elemen pertama pada berkas HTML
+            </p>
+            <p>This is a paragraph, rules akan diterapkan pada seluruh elemen kedua yang berada 
+                setelah elemen pertama selama masih memiliki induk yang sama, walaupun posisi 
+                dari elemen kedua tidak berada tepat setelahnya.</p>
+        </body>
+    </body>
+</html>

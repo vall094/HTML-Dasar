@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <head>
+        <title>Pseudo-class selector</title>
+    </head>
+    <style>
+        p {
+            display: none;
+            background-color: darkgray;
+            padding: 20px;
+        }
+        .elemen:hover p {
+            display: block;
+        }
+        #link {
+            display: none;
+            background-color: darkgreen;
+            padding: 20px;
+        }
+        .link:hover #link {
+            display: block;
+        }
+    </style>
+    <body>
+        <div class="elemen" >Letakkan kursor disini untuk melihat div element
+            <p>Saya adalah elemen</p>
+        </div>
+        
+        <div class="link">
+            <a href="combinator.html">Link</a>
+            <p id="link">Ini adalah link</p>
+        </div>
+    </body>
+</html>
