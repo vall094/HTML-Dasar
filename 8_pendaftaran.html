@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Halaman Beranda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Noval Fajar Budi Pamungkas">
+        <meta name="nim" content="233307022">
+        <link rel="icon" type="img/png" href="html_advance/html_advance/gambar/icon.png">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            header{
+                background-color: #666;
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+            nav{
+                float: left;
+                width: 30%;
+                height: 600px;
+                background: #ccc;
+                padding: 20px;
+            }
+            nav ul{
+                list-style-type: none;
+                padding: 0;
+            }
+            article{
+                float: left;
+                padding: 20px;
+                width: 70%;
+                background-color: #f1f1f1;
+                height: 600px;
+            }
+            section::after{
+                content: "";
+                display: table;
+                clear: both;
+            }
+            footer{
+                background-color: #777;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+            @media (max-width: 600px){
+                nav, article{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>Judul Website</h2>
+        </header>
+
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="1_index.html">Home</a></li>
+                    <li><a href="2_gambar.html">Gambar</a></li>
+                    <li><a href="3_event.html">Event</a></li>
+                    <li><a href="4_audio.html">Audio</a></li>
+                    <li><a href="5_video.html">Video</a></li>
+                    <li><a href="6_svg.html">SVG</a></li>
+                    <li><a href="7_canvas.html">Canvas</a></li>
+                    <li><a href="8_pendaftaran.html">Pendaftaran</a></li>
+                </ul>
+            </nav>
+            <article>
+                <h1>Form Penjadwal Pertemuan</h1>
+                <div>
+                    <form action="proses.php" method="get">
+                        <fieldset>
+                            <legend>Informasi Pribadi</legend>
+                            <br>
+                
+                            <label for="username"> Nama </label>
+                            <input type="text" id="username" name="username"> <br>
+                            <br>
+                
+                            <label for="ph"> No. Telepone</label>
+                            <input type="tel" id="ph" name="phone" pattern="^0[0-9]{11}$" required><br>
+                            <br>
+                
+                            <label for="email">Alamat Email </label>
+                            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required> <br>
+                            <br>
+                
+                            <label for="b">Tanggal Lahir </label>
+                            <!-- Update: Menambahkan select untuk tahun -->
+                            <input type="date" id="b" name="tanggal" min="1987-01-01" max="2024-01-01" required>
+                        </select>
+                        <br>
+                        <br>
+                    </fieldset>
+            
+            
+                    <fieldset>
+                        <legend>Permintaan Pertemuan</legend>
+                        <br>
+            
+                        <label for="tujuan"> Tujuan Pertemuan </label>
+                        <input type="text" id="tujuan" name="tujuan"> <br>
+                        <br>
+            
+                        <label for="vol"> Tingkat Kepentingan Pertemuan</label>
+                        <input type="range" id="vol" name="vol" min="0" max="10"> <br>
+                        <br>
+            
+                        <label for="b">Tanggal </label>
+                        <input type="date" id="b" name="tanggal" required> <br>
+                        <br>
+            
+                        <label for="appt">Select a time:</label>
+                        <input type="time" id="appt" name="appt" required> <br>
+            
+                    </fieldset><br> 
+                        <input type="submit" value="Submit"/>
+                        </form>
+                        </div>
+                    <script>
+                        // Ambil elemen select tahun
+                        var selectTahun = document.getElementById('tahun');
+                    
+                        // Mendapatkan tahun sekarang
+                        var tahunSekarang = new Date().getFullYear();
+                    
+                        // Tambahkan opsi tahun dari tahunSekarang hingga tahunSekarang - 100
+                        for (var tahun = tahunSekarang; tahun >= tahunSekarang - 100; tahun--) {
+                            var option = document.createElement('option');
+                            option.value = tahun;
+                            option.textContent = tahun;
+                            selectTahun.appendChild(option);
+                        }
+                    
+                        // Fungsi untuk memperbarui tanggal lahir ketika pilihan tahun diubah
+                        function updateTanggalLahir() {
+                            var tanggalInput = document.getElementById('b');
+                            var tahunSelected = selectTahun.value;
+                            var bulan = tanggalInput.value.substring(5, 7);
+                            var hari = tanggalInput.value.substring(8, 10);
+                            var tanggalLahir = tahunSelected + '-' + bulan + '-' + hari;
+                            tanggalInput.value = tanggalLahir;
+                        }
+                    </script>
+                <p> <!--Tulis kesimpulan hasil ujicoba disini--></p>
+            </article>
+        </section>
+
+        <footer>
+            <p>Footer</p> <!--ubah sesuai selera anda--->
+        </footer>
+    </body>
+</html>
