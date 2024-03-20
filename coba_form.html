@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <title>Form Sederhana</title>
+        <link rel="icon" type="img/png" href="html_form/gambar/icon.png"/>
+        <meta name="viewport" content="width=device-widht, initial-scale=1">
+    </head>
+    <body>
+        <form method="get" target="_top" action="/coba_form.html">
+            <label for="depan">Nama Depan:</label><br>
+            <input type="text" id="depan" name="i_name" value="Noval"><br>
+            <label for="n_belakang">Nama Belakang:</label><br>
+            <input type="text" id="n_belakang" name="i_belakang" value="Pamungkas"><br><br>
+            <input type="submit" value="Kirim">
+            <input type="reset" value="Reset">
+        </form>
+        <p>Jika Anda mengklik tombol "Kirim", data formulir akan dikirim ke halaman bernama"/coba_form.html"</p>
+        <p>Jika menggunakan target <b>_self</b> akan berada di tab yang sama, jika menggunakan <b>_blank</b> akan membuat tab baru</p>
+        <p>Jika menggunakan method <b>get</b> di url akan menampilkan <i>file:///D:/coba_form.html?i_name=Noval&i_belakang=Pamungkas</i>, jika menggunakan method <b>post</b> di url akan menampilkan <i>file:///D:/coba_form.html</i></p>
+    </body>
+</html>
