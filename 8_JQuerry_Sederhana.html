@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>jQuery Sederhana</title>
+    </head>
+    <body>
+        <div id="box">Klik saya untuk mengubah warna!</div>
+        <script >
+            $(document).ready(function() {    
+                $('#box').click(function() {
+                    // Menghasilkan warna acak
+                    var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                    $(this).css('background-color', randomColor);
+                    });
+                });
+        </script>
+        <script language ="JavaScript"></script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic Dialog</title>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body>
+        <button id="open-dialog">Buka Dialog</button>
+        <div id="dialog" title="Basic Dialog">
+            <p>Ini adalah jendela dialog sederhana menggunakan jQuery UI.</p>
+        </div>
+        <script language = "JavaScript">
+            $(document).ready(function() {
+                // Menginisialisasi dialog
+                $("#dialog").dialog({
+                    autoOpen: false, // Jangan buka secara otomatis saat halaman dimuat
+                    modal: true, // Buat sebagai dialog modal
+                    buttons: { // Tombol untuk menutup dialog
+                    "Tutup": function() {
+                        $(this).dialog("close");
+                    }
+                }
+                });
+                // Mengatur peristiwa saat tombol 'Buka Dialog' diklik
+                $("#open-dialog").click(function() {
+                    // Buka dialog
+                    $("#dialog").dialog("open");
+                    });
+                });
+        </script>
+    </body>
+</html>

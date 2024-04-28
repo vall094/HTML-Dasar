@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Download Dialog dengan Progress Bar</title>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body>
+        <button id="download">Download</button>
+        <div id="dialog" title="Download Progress">
+        <div id="progressbar"></div>
+        <div id="progress-label">0%</div>
+        </div>
+        <script language = "JavaScript">
+            $(document).ready(function() {
+                // Inisialisasi dialog
+                $("#dialog").dialog({
+                    autoOpen: false, // Jangan buka secara otomatis saat halaman dimuat
+                    modal: true, // Buat sebagai dialog modal
+                    closeOnEscape: false, // Jangan tutup saat tombol escape ditekan
+                    draggable: false, // Tidak bisa di-drag
+                    resizable: false, // Tidak bisa di-resize
+                    open: function() {
+                        // Mulai simulasi unduhan saat dialog dibuka
+                        simulateDownload();
+                    }
+                });  
+                // Mengatur peristiwa saat tombol 'Download' diklik
+                $("#download").click(function() {
+                    // Buka dialog unduhan
+                    $("#dialog").dialog("open");
+                    });
+                });
+                function simulateDownload() {
+                    var progressbar = $("#progressbar"),
+                    progressLabel = $("#progress-label"),
+                    progress = 0;  
+                    // Fungsi rekursif untuk menambahkan progres setiap 500ms
+                    function progressLoop() {
+                        setTimeout(function() {
+                            progress += 1;
+                            progressbar.progressbar("value", progress);
+                            progressLabel.text(progress + "%");  
+                            if (progress < 100) {
+                                progressLoop();
+                            } else {
+                                // Proses unduhan selesai, tutup dialog
+                                $("#dialog").dialog("close");
+                            }
+                        }, 500);
+                    }       
+                    // Konfigurasi progress bar
+                    progressbar.progressbar({
+                        value: false,
+                            change: function() {
+                                progressLabel.text(progressbar.progressbar("value") + "%");
+                            },
+                            complete: function() {
+                                progressLabel.text("Complete!");
+                            }
+                        });
+                        // Mulai proses unduhan
+                        progressLoop();
+                    }
+        </script>
+    </body>
+</html>
