@@ -1,61 +1,74 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Halaman HTML Noval</title>
-        <link rel="icon" type="image/png" href="gambar/icon.png" sizes="16x16"/>
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Halaman Noval</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body{
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(137,0,255,1) 20%);
+        }
+        footer {
+        background-color: #343a40; 
+        color: white; 
+        padding: 20px 0; 
+        position: fixed; 
+        width: 100%; 
+        bottom: 0; 
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark"">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Menu</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Aboutme.html">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Hobi.html">Hobi</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="container text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3  ">
+        <h1 class="mt-5 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Selamat Datang di Website Noval Fajar Budi Pamungkas!</h1>
+        <p>website ini adalah untuk belajar mengenai CSS Framework yang ada pada mata kuliah Pemrograman web</p>
+        <h2>Mengapa Bootstrap?</h2>
+        <ol>
+          <li>Bootstrap adalah kerangka kerja (framework) sumber terbuka yang populer untuk pengembangan web. Diciptakan oleh tim pengembang dari Twitter, Bootstrap dirancang untuk memudahkan pengembangan web dengan menyediakan seperangkat alat dan gaya yang dapat digunakan secara mudah.</li>
+        </ol>
+        <h2>Fitur Utama Bootstrap:</h2>
+        <ol>
+          <li><strong>Grid System:</strong> Sistem grid Bootstrap memungkinkan Anda untuk membuat tata letak yang responsif dengan mudah, dengan membagi halaman menjadi kolom-kolom yang dapat diatur.</li>
+          <li><strong>Komponen UI:</strong> Bootstrap menyediakan beragam komponen antarmuka pengguna (UI) yang siap pakai, seperti tombol, formulir, jumbotron, dan banyak lagi. Ini memperce</li>
+        </ol>
+      </div>
+      <footer>
+        <div class="container text-center">
+          <p>&copy; Noval Fajar Budi Pamungkas/233307022</p>
+        </div>
+      </footer>
     
-            td {
-                padding: 8px;
-                text-align: left;
-            }
-        </style>
-    </head>
-    <body>
-        <table>
-            <tr>
-                <td style="width: 30%;">
-                    <ul>
-                        <li>
-                            <a href="latihan_1_1.html" target="if">Latihan 1</a>
-                        </li>
-                        <li>
-                            <a href="latihan_1_2.html" target="if">Latihan 2</a>
-                        </li>
-                        <li>
-                            <a href="latihan_1_3.html" target="if">Latihan 3</a>
-                        </li>
-                        <li>
-                            <a href="latihan_1_4.html" target="if">Latihan 4</a>
-                        </li>
-                        <li>
-                            <a href="latihan_1_5.html" target="if">Latihan 5</a>
-                        </li>
-                        <li>
-                            <a href="latihan_1_6.html" target="if">Latihan 6</a>
-                        </li>
-                        <li>
-                            <a href="latihan_1_7.html" target="if">Latihan 7</a>
-                        </li>
-                        <li>
-                            <a href="latihan_1_8.html" target="if">Latihan 8</a>
-                        </li>
-                        <li>
-                            <a href="latihan_1_9.html" target="if">Latihan 9</a>
-                        </li>
-                        <li>
-                            <a href="latihan_1_10.html" target="if">Latihan 10</a>
-                        </li>
-                    </ul>
-                </td>
-                <td>
-                    <iframe width="100%" height="600px" name="if"></iframe>
-                </td>
-            </tr>
-        </table>
-    </body>
+    <script src="js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
 </html>
